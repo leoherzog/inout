@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="refresh" content="1800">
+
+    <link href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.5/readable/bootstrap.min.css" rel="stylesheet">
+    <!-- uncomment below and comment above for fun-->
+    <!--link href="//code.divshot.com/geo-bootstrap/swatch/bootstrap.min.css" rel="stylesheet"-->
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    <title>Leo's In-Out Board</title>
+    <script type="text/javascript" language="JavaScript" src="lib/misc.js" +new date().gettime()></script>
+    <script type="text/javascript" language="JavaScript" src="lib/config.js" +new date().gettime()></script>
+    <script type="text/javascript" language="JavaScript" src="lib/freebusy.js" +new date().gettime()></script>
+    <script type="text/javascript" language="JavaScript" src="lib/tick.js"></script>
+
+    <script src="//apis.google.com/js/client.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js?onload=tick"></script>
+
+    <script>
+        window.onload = function() {
+            setInterval(tickTock, 1000);
+        }
+    </script>
+
+    <style>
+        body {
+            padding: 8px;
+        }
+        .navbar-nav {
+            line-height: 76px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand">
+                    <img src="img/logo.jpg" alt="Logo" width="200px">
+                </a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <div id="date"><span class="text-muted">Loading Time...</span></div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id='divFreeBusy' style="padding: 8px;">
+
+        <div id='divLogin' style='display: none; text-align: center; padding-top: 30px'>
+            <span id="signinButton">
+                <span class="g-signin" data-callback="glogin_callback" data-clientid="**YourGoogleAPIKey**.apps.googleusercontent.com" data-cookiepolicy="single_host_origin" data-requestvisibleactions="http://schemas.google.com/AddActivity" data-scope="https://www.googleapis.com/auth/plus.login https://www.googleapis.com/auth/calendar.readonly"
+                data-width="wide">
+                </span>
+            </span>
+        </div>
+
+        <div id='divMainList' style='display:none'>
+            <div class="table-responsive">
+                <table id='tableList' class="table table-striped" border=0>
+                    <thead id='theadList'>
+                        <tr>
+                            <th style='width:15%'>Name</th>
+                            <th style='width:20%'>Free/Busy</th>
+                            <th style='width:25%'>Event</th>
+                            <th style='width:25%'>Location</th>
+                            <th style='width:15%'>Duration</th>
+                        </tr>
+                    </thead>
+                    <tbody id='tbodyList'></tbody>
+                </table>
+            </div>
+            <hr>
+            <br />
+            <iframe id="forecast-embed" type="text/html" frameborder="0" height="240px" width="100%" src="https://forecast.io/embed/#lat=40.7142&lon=-74.0064&name=New&nbsp;York" seamless></iframe>
+        </div>
+    </div>
+
+    <script>
+        (function() {
+            var po = document.createElement('script');
+            po.type = 'text/javascript';
+            po.async = true;
+            po.src = 'https://apis.google.com/js/client:plusone.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(po, s);
+        })();
+    </script>
+
+</body>
+
+</html>
