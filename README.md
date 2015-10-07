@@ -3,9 +3,9 @@ JS In/Out
 
 A simple HTML table generator. You log in via Google, and it displays a hard-coded list of Google Calendar user's statuses.
 
-For each user, you get **Name**, **Free/Busy**, **Event**, **Location**, and **Duration**. If the person has shared their calendar with you, you will see if they are free or busy, and if busy, event information available to you.
+For each user, you get **Name**, **Free/Busy**, **Event**, **Location**, and **Duration**. If the person has shared their calendar with you, you will see if they are free or busy, and if busy, event information available to you. When you create a new event in Google Calendar, "Available" vs. "Busy" events determine your status on the board, and "Public" vs. "Private" events determine if the details of the event are visable on the board. If you have more than one event going on at the same time, the board looks at the event that was most recently updated on your calendar.
 
-This only uses vanilla Javascript. Only a web server is required; No Ruby, PHP, etc.
+This only uses vanilla Javascript. Only a static web server is required; No Ruby, PHP, etc.
 
 Feel free to take a look at the source and adapt as you please. I would love to see some pull requests for improvements to the Javascript (coding n00b here).
 
