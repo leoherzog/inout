@@ -17,7 +17,8 @@
     <script type="text/javascript" language="JavaScript" src="lib/config.js"></script>
     <script type="text/javascript" language="JavaScript" src="lib/freebusy.js"></script>
 
-    <script src="//apis.google.com/js/client.js"></script>
+    <script src="//apis.google.com/js/platform.js" async defer></script>
+    <meta name="google-signin-client_id" content="**YourGoogleAPIKey**.apps.googleusercontent.com">
 
     <style>
         body {
@@ -52,15 +53,13 @@
         </div>
     </div>
 
-    <div id='divFreeBusy' style="padding: 8px;">
+    <div id='divFreeBusy'>
 
-        <div id='divLogin' style='display: none; text-align: center; padding-top: 30px'>
-            <span id="signinButton">
-                <span class="g-signin" data-callback="glogin_callback" data-clientid="**YourGoogleAPIKey**.apps.googleusercontent.com" data-cookiepolicy="single_host_origin" data-requestvisibleactions="http://schemas.google.com/AddActivity" data-scope="https://www.googleapis.com/auth/plus.login https://www.googleapis.com/auth/calendar.readonly"
-                data-width="wide">
-                </span>
-            </span>
-        </div>
+      <div id='divLogin' style='width: 240px; margin: 0 auto; text-align: center; padding-top: 30px'>
+          <span id="signinButton">
+              <div class="g-signin2" data-width="240" data-height="50" data-longtitle="true" data-scope="https://www.googleapis.com/auth/calendar.readonly" data-onsuccess="glogin_onsuccess" data-onfailure="glogin_onfailure"></div>
+          </span>
+      </div>
 
         <div id='divMainList' style='display:none'>
             <div class="table-responsive">
