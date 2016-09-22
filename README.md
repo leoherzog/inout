@@ -1,3 +1,6 @@
+> This project is deprecated and is no longer receiving updates.  
+[Check out v2](https://github.com/xd1936/inout2), rewritten in Google Apps Script (and still open source, of course)!
+
 JS In/Out
 ===========
 
